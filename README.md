@@ -1,12 +1,9 @@
-# Build and Deploy a Modern YouTube Clone Application in React JS with Material UI 5
+This repository is forked from the GitHub repository created by '**Adrian Hajdin**' and is being used for learning, experimentation, and testing of **Azure** DevOps concepts and workflows.
 
-![YouTube](https://i.ibb.co/4R5RkmW/Thumbnail-5.png)
+The Azure DevOps implementation and exercises in this repository are based on the following learning resource:
 
-### [🌟 Become a top 1% Next.js 13 developer in only one course](https://jsmastery.pro/next13)
-### [🚀 Land your dream programming job in 6 months](https://jsmastery.pro/masterclass)
+Reference Video:
+https://www.youtube.com/watch?v=3Nv-FzzrqYU&list=PLl4APkPHzsUXseJO1a03CtfRDzr2hivbD&index=5
 
-### Showcase your dev skills with practical experience and land the coding career of your dreams
-💻 JS Mastery Pro - https://jsmastery.pro/youtube
-✅ A special YOUTUBE discount code is automatically applied!
+This repository is intended for educational purposes only. Anyone interested in understanding or practicing Azure DevOps concepts may refer to the above video for additional context and guidance.
 
-📙 Get the Ultimate Frontend & Backend Development Roadmaps, a Complete JavaScript Cheatsheet, Portfolio Tips, and more - https://www.jsmastery.pro/links
