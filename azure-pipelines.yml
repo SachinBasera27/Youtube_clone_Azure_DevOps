@@ -1,0 +1,47 @@
+trigger: 
+- main
+
+stages: 
+- stage: Build
+  jobs:
+  - job: Build
+    pool:
+        vmimage: ubuntu-latest
+    steps:
+    - task: Npm@1
+      inputs:
+        command: 'install'
+
+    - task: Npm@1
+      inputs:
+        command: 'custom'
+        customCommand: 'run build'
+
+    - task: PublishBuildArtifacts@1
+      inputs:
+        PathtoPublish: 'build'
+        ArtifactName: 'drop'
+        publishLocation: 'Container'
+
+- stage: Deploy
+  jobs:
+  - job: Deploy
+    pool:
+        vmimage: ubuntu-latest
+    steps:
+    - task: DownloadBuildArtifacts@1
+      inputs:
+        buildType: 'current'
+        downloadType: 'single'
+        artifactName: 'drop'
+        downloadPath: '$(System.ArtifactsDirectory)'
+    - task: AzureRmWebAppDeployment@5
+      inputs:
+        ConnectionType: 'AzureRM'
+        azureSubscription: 'ME-MngEnvMCAP721149-v-sbasera (1774ebf6-15ce-4518-af28-2ebc6a775b80)'
+        appType: 'webAppLinux'
+        WebAppName: 'YoutubeClone-Sachin'
+        packageForLinux: '$(System.ArtifactsDirectory)/drop'
+        RuntimeStack: 'NODE|22-lts'
+        StartupCommand: 'pm2 serve /home/site/wwwroot --no-daemon --spa'
+        DeploymentTypeLinux: 'oneDeploy'
