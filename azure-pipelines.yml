@@ -35,12 +35,13 @@ stages:
         downloadType: 'single'
         artifactName: 'drop'
         downloadPath: '$(System.ArtifactsDirectory)'
+        
     - task: AzureRmWebAppDeployment@5
       inputs:
         ConnectionType: 'AzureRM'
-        azureSubscription: 'ME-MngEnvMCAP721149-v-sbasera (1774ebf6-15ce-4518-af28-2ebc6a775b80)'
+        azureSubscription: 'Add your Azure subs'
         appType: 'webAppLinux'
-        WebAppName: 'YoutubeClone-Sachin'
+        WebAppName: 'Add Azure Web App Name'
         packageForLinux: '$(System.ArtifactsDirectory)/drop'
         RuntimeStack: 'NODE|22-lts'
         StartupCommand: 'pm2 serve /home/site/wwwroot --no-daemon --spa'
